@@ -23,6 +23,10 @@ group :test do
   gem 'rspec-html-matchers'
 end
 
+group :development do
+	gem 'thin'
+end
+
 group :test, :development do
 	gem 'debugger'
 end
