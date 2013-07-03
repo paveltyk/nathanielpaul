@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'pg'
 gem 'slim'
+gem 'simple-navigation'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -31,4 +32,5 @@ end
 
 group :test, :development do
 	gem 'debugger'
+  gem 'better_errors'
 end
