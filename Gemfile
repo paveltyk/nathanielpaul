@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'pg', :group => :production
-gem 'mysql2', :group => [:development, :test]
 gem 'slim'
 gem 'simple-navigation'
 gem 'jquery-rails', '~> 2.0.0'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -26,11 +26,8 @@ group :test do
   gem 'rspec-html-matchers'
 end
 
-group :development do
-  gem 'thin'
-end
-
 group :test, :development do
   gem 'debugger'
   gem 'better_errors'
+  gem 'mysql2'
 end
