@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'slim'
 gem 'simple-navigation'
+gem 'jquery-rails', '~> 2.0.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -12,10 +13,8 @@ group :assets do
   gem 'turbo-sprockets-rails3', :git => 'git@github.com:ndbroadbent/turbo-sprockets-rails3.git'
   # Synchronises Assets between Rails and S3.
   # gem 'asset_sync'
-	gem 'bootstrap-sass', '~> 2.3.2.0'
+  gem 'bootstrap-sass', '~> 2.3.2.0'
 end
-
-gem 'jquery-rails'
 
 group :test do
   gem 'rspec-rails', git: 'git://github.com/rspec/rspec-rails.git'
