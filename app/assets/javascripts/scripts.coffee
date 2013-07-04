@@ -1,5 +1,8 @@
-$ ->
-  $("#landing-slideshow").cycle
-    timeout: 3000
-    cleartype: 1
-    speed: 900
+$(window).load ->
+  $(".flexslider").flexslider({
+		animation: "fade",
+		easing: "swing",
+		controlNav: false,
+		slideshowSpeed: 7000,
+		animationSpeed: 900
+		})

@@ -1,3 +1,11 @@
-#landing-slideshow
-	img src='assets/landing_1.jpg'
-	img src='assets/landing_2.jpg'
+- content_for :title do
+  | Home | Nathaniel Paul
+
+.flexslider
+  ul.slides
+    li
+      = image_tag asset_path('landing_1.jpg')
+    li
+      = image_tag asset_path('landing_2.jpg')
+
+= render 'bottom_navigation'
