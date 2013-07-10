@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'pg', :group => :production
 gem 'slim'
 gem 'simple-navigation'
 gem 'jquery-rails', '~> 2.0.0'
@@ -15,6 +14,10 @@ group :assets do
   # Synchronises Assets between Rails and S3.
   # gem 'asset_sync'
   gem 'bootstrap-sass', '~> 2.3.2.0'
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :test do
