@@ -21,7 +21,6 @@ group :production do
 end
 
 group :test do
-  gem 'rspec-rails', git: 'git://github.com/rspec/rspec-rails.git'
   gem 'capybara',  git: 'https://github.com/jnicklas/capybara', :ref => 'd153635e6546ecc742e2b805390bc42a1e863d7c'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
@@ -30,6 +29,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'rspec-rails', git: 'git://github.com/rspec/rspec-rails.git'
   gem 'debugger'
   gem 'better_errors'
   gem 'mysql2'

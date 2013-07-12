@@ -4,7 +4,6 @@ db/*.sqlite3
 /tmp
 /uploads
 .idea
-.rspec
 /config/database.yml
 /public/uploads
 /public/system
