@@ -30,7 +30,7 @@ body { height: 100%; background-color: #494949; }
 
 .entry-content { width: 67%; margin: 0 auto; padding: 40px; }
 
-ul.slides li { display: block; position: absolute; height: auto; bottom: 0; top: 0; left: 0; right: 0; margin: 0; background: image-url('landing_1.jpg') no-repeat center center fixed transparent; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; z-index: -1; }
+ul.slides li { display: block; position: absolute; height: auto; bottom: 0; top: 0; left: 0; right: 0; margin: 0; background: image-url('landing_1.jpg') no-repeat center center fixed transparent; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; z-index: -1; }
 
 ul.slides li.image_1 { background-image: image-url('landing_1.jpg'); }
 
