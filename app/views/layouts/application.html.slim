@@ -21,10 +21,7 @@ html.no-js lang="#{::I18n.locale}"
     = csrf_meta_tags
 
   body
-    section.container-fluid.clearfix
-      .row-fluid
-        = yield
-
-    footer
+    .container-fluid.clearfix
+      = yield
 
     = javascript_include_tag "application"
