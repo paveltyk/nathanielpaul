@@ -10,7 +10,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'turbo-sprockets-rails3', :git => 'git@github.com:ndbroadbent/turbo-sprockets-rails3.git'
+  gem 'turbo-sprockets-rails3', :git => 'git://github.com/ndbroadbent/turbo-sprockets-rails3.git'
   # Synchronises Assets between Rails and S3.
   # gem 'asset_sync'
   gem 'bootstrap-sass', '~> 2.3.2.0'

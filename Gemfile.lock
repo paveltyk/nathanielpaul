@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/ndbroadbent/turbo-sprockets-rails3.git
+  revision: 880904169535d1ccebdae3ba2da83f595f09e67d
+  specs:
+    turbo-sprockets-rails3 (0.3.6)
+      railties (> 3.2.8, < 4.0.0)
+      sprockets (>= 2.0.0)
+
+GIT
   remote: git://github.com/rspec/rspec-rails.git
   revision: d546278af1647d2ca2eeb704449f7348cf1528ee
   specs:
@@ -9,14 +17,6 @@ GIT
       rspec-core (= 2.14.0.rc1)
       rspec-expectations (= 2.14.0.rc1)
       rspec-mocks (= 2.14.0.rc1)
-
-GIT
-  remote: git@github.com:ndbroadbent/turbo-sprockets-rails3.git
-  revision: 880904169535d1ccebdae3ba2da83f595f09e67d
-  specs:
-    turbo-sprockets-rails3 (0.3.6)
-      railties (> 3.2.8, < 4.0.0)
-      sprockets (>= 2.0.0)
 
 GIT
   remote: https://github.com/jnicklas/capybara
