@@ -1,11 +1,10 @@
+- set_landing_style
 - content_for :title do
   | Home | Nathaniel Paul
 
-.row-fluid
-  .flexslider
-    ul.slides
-      li.image_1
-      li.image_2
+.flexslider
+  ul.slides
+    - %w(landing_1.jpg landing_2.jpg).each do |image_name|
+      li style='background-image:url(#{asset_path(image_name)});'
 
-  .bottom-nav-bg
-  = render 'bottom_navigation'
+.bottom-nav-bg

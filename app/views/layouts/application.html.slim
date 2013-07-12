@@ -7,7 +7,7 @@ doctype html
 html.no-js lang="#{::I18n.locale}"
   /! <![endif]
   head
-    title = content_for?(:title) ? yield(:title) : 'Nathaniel Paul'
+    title= yield(:title).presence || 'Nathaniel Paul'
 
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
@@ -21,7 +21,10 @@ html.no-js lang="#{::I18n.locale}"
     = csrf_meta_tags
 
   body
-    .container-fluid.clearfix
-      = yield
+    .container-wrap
+      .page-content class=('landing' if landing_style?)
+        .container-fluid
+          = yield
+          .bottom-nav= render_navigation
 
     = javascript_include_tag "application"
