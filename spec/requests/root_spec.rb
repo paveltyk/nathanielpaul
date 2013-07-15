@@ -13,9 +13,9 @@ describe "Root" do
     end
   end
 
-  describe "GET /contact" do
+  describe "GET /feedback/new" do
     it "display contact page" do
-      get contact_path
+      get new_feedback_path
       response.status.should eq 200
     end
   end

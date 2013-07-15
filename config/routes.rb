@@ -4,6 +4,7 @@ Nathan::Application.routes.draw do
   controller :root do
     get 'landing'
     get 'about'
-    get 'contact'
   end
+
+  resources :feedback, :only => :new
 end
