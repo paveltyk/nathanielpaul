@@ -12,6 +12,7 @@ p {margin-bottom:3px;}
 .bottom-nav ul li.selected {background-color:#f1f1f1;font-weight:bold;}
 .bottom-nav ul li a {color:#3c3c3c;}
 .bottom-nav ul li a:hover {text-decoration:none;font-weight:bold;}
+.bottom-nav:before {display:block;content:'';position:absolute;bottom:60px;left:45px;background: image-url('nathan-logo.png') top left no-repeat;height:50px;width:92px;background-size:100%;}
 
 .landing .bottom-nav-bg {display:block;position:absolute;bottom:0;margin-left:-20px;height:47px;width:100%;background-color:#494949;opacity:.5;}
 .landing .bottom-nav ul {height:47px;line-height:47px;margin:0;padding:0;border:none;text-align:center;}
@@ -20,7 +21,6 @@ p {margin-bottom:3px;}
 
 ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;margin:0;background:transparent no-repeat center center fixed;-webkit-background-size:contain;-moz-background-size:contain;-o-background-size:contain;background-size:contain;}
 
-.row-fluid {margin-bottom: 150px;margin-top: 150px;min-width:410px;}
-.row-fluid .about_image {background: image-url('about.jpg') top left no-repeat;min-height: 394px;min-width: 115px;}
-
-.bottom_logo {position:absolute;bottom:60px;left:45px;background: image-url('nathan-logo.png') top left no-repeat;height:50px;width:92px;background-size:100%;}
+.about {background:image-url('about.jpg') 100% center no-repeat;min-height:394px;}
+.about p {margin-right:120px;font-size:13px;line-height:150%;margin-bottom:10px;}
+.about p:first-child {margin-right:80px;}

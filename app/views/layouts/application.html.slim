@@ -25,7 +25,6 @@ html.no-js lang="#{::I18n.locale}"
       .page-content class=('landing' if landing_style?)
         .container-fluid
           = yield
-          .bottom_logo
           .bottom-nav= render_navigation
 
     = javascript_include_tag "application"
