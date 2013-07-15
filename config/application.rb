@@ -73,5 +73,7 @@ module Nathan
       g.fixture_replacement :factory_girl, :dir => 'spec/factories'
       g.stylesheet_engine = :sass
     end
+
+    config.assets.precompile += %w(modernizr-min.js)
   end
 end
