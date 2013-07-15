@@ -163,6 +163,9 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    sendgrid-rails (2.0.3)
+      actionmailer (>= 3.0.0)
+      activesupport (>= 2.1.0)
     shoulda-matchers (2.2.0)
       activesupport (>= 3.0.0)
     simple-navigation (3.9.0)
@@ -211,6 +214,7 @@ DEPENDENCIES
   rspec-html-matchers
   rspec-rails!
   sass-rails (~> 3.2.3)
+  sendgrid-rails (~> 2.0.2)
   shoulda-matchers
   simple-navigation
   slim
