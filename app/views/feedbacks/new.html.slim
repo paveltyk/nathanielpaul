@@ -3,8 +3,17 @@
 
 .row-fluid
   .span8.offset2
+    = render 'flash_notifications'
+
     .contact
       p Thank you for visiting Nathaniel Paul Designs.
       p Please make sure to return to the site for future updates as we continue to seasonally update our product line.
       p For retail or wholesale inquires please use the form below to contact us.
       p Thank you for choosing Nathaniel Paul Designs.
+
+      = simple_form_for @feedback do |f|
+        = f.input :email
+        = f.input :subject
+        = f.input :message, :as => :text
+
+        = f.submit 'send message'

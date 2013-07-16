@@ -6,6 +6,6 @@ Nathan::Application.routes.draw do
     get 'about'
   end
 
-  resources :feedbacks, :only => :new
+  resources :feedbacks, :only => [:new, :create]
   match '/contact' => 'feedbacks#new', :via => :get, :as => :contact
 end
