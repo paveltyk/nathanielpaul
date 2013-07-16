@@ -1,10 +1,10 @@
 class AppMailer < ActionMailer::Base
-  def deliver(contact, message)
-    header = {
-      :subject => 'New message from contact form',
-      :from => contact,
+  def contact_form(contact, message)
+    mail(
       :to => ENV['CONTACT_EMAIL'],
+      :from => contact,
+      :subject => 'New message from contact form',
       :body => message
-    }
+      )
   end
 end

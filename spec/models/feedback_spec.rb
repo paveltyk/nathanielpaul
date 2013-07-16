@@ -15,6 +15,10 @@ describe Feedback do
       let(:feedback) { Feedback.new :email => 'user@example.com', :message => 'Message text' }
 
       it { feedback.save.should be }
+      it "should send an email to site admin" do
+        ActionMailer::Base.deliveries = []
+        expect { feedback.save }.to change(ActionMailer::Base.deliveries, :count).by(1)
+      end
     end
 
     context 'with invalid attributes' do

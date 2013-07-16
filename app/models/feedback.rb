@@ -23,8 +23,7 @@ class Feedback
 
   def save
     if valid?
-      # TODO UserMailer.deliver(recipient, subj, message)
-      true
+      AppMailer.contact_form(email, message).deliver
     else
       false
     end
