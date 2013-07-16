@@ -7,7 +7,7 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new(params[:feedback])
 
     if @feedback.save
-      redirect_to new_feedback_path, :notice => 'Thank you. Your message was successfully sent!'
+      redirect_to new_feedback_path, :notice => 'Thank you for contacting us. We have received your message and will respond shortly.'
     else
       render :new
     end

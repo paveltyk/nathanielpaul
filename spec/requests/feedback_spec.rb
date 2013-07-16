@@ -8,7 +8,7 @@ describe "Feedback page" do
     context 'fill form with valid data' do
       before { fill_form_with('user@example.com', 'Subject', 'Message text') }
 
-      it { page.body.should have_content("Thank you. Your message was successfully sent!") }
+      it { page.body.should have_content('Thank you for contacting us. We have received your message and will respond shortly.') }
       it { current_path.should be_eql contact_path }
     end
 

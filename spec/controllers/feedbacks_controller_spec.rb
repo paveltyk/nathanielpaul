@@ -17,7 +17,7 @@ describe FeedbacksController do
 
       it { should respond_with(:redirect) }
       it { response.should redirect_to(contact_path) }
-      it { flash[:notice].should eq('Thank you. Your message was successfully sent!') }
+      it { flash[:notice].should eq('Thank you for contacting us. We have received your message and will respond shortly.') }
     end
 
     context :with_invalid_params do
