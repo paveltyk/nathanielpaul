@@ -11,7 +11,7 @@ describe FeedbacksController do
 
   describe :create do
     context :with_valid_params do
-      let(:params) { { :feedback => { :email => 'user@example.com', :subject => 'Subject', :message => 'Message text' } } }
+      let(:params) { { :feedback => { :email => 'user@example.com', :message => 'Message text' } } }
 
       before { post :create, params }
 
@@ -21,7 +21,7 @@ describe FeedbacksController do
     end
 
     context :with_invalid_params do
-      let(:params) { { :feedback => { :email => 'user@@example.com', :subject => '', :message => 'Message text' } } }
+      let(:params) { { :feedback => { :email => 'user@@example.com', :message => 'Message text' } } }
 
       before { post :create, params }
 

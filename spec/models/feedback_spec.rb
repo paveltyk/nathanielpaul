@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe Feedback do
   it { should validate_presence_of(:email) }
-  it { should validate_presence_of(:subject) }
   it { should validate_presence_of(:message) }
 
   describe :persisted? do
@@ -13,13 +12,13 @@ describe Feedback do
 
   describe :save do
     context 'with valid attributes' do
-      let(:feedback) { Feedback.new :email => 'user@example.com', :subject => 'Subject', :message => 'Message text' }
+      let(:feedback) { Feedback.new :email => 'user@example.com', :message => 'Message text' }
 
       it { feedback.save.should be }
     end
 
     context 'with invalid attributes' do
-      let(:feedback) { Feedback.new :email => 'user@example.com', :subject => 'Subject', :message => '' }
+      let(:feedback) { Feedback.new :email => 'user@example.com', :message => '' }
 
       it { feedback.save.should be_false }
     end
