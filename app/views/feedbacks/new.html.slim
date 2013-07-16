@@ -13,5 +13,5 @@
 
       = simple_form_for @feedback, url: new_feedback_path do |f|
         = f.input :email, :label => false, :placeholder => 'Email'
-        = f.input :message, :as => :text, :label => false, :placeholder => 'Message'
-        = f.submit 'send message', :class => :btn
+        = f.input :message, :as => :text, :label => false, :placeholder => 'Message', :input_html => { :rows => 6 }
+        = f.submit 'send message', :class => 'btn btn-inverse'
