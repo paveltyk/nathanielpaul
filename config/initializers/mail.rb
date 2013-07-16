@@ -11,7 +11,3 @@ if ENV['SENDGRID_USERNAME'] && ENV['SENDGRID_PASSWORD']
   }
   ActionMailer::Base.delivery_method = :smtp
 end
-
-SendGrid.configure do |config|
-  config.dummy_recipient = ENV['CONTACT_EMAIL']
-end
