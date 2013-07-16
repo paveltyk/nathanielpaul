@@ -1,24 +1,24 @@
 describe "Feedback page" do
     context 'get /contact' do
-      before { get contact_path }
+      before { get new_feedback_path }
 
       it { response.status.should eq 200 }
     end
 
     context 'fill form with valid data' do
       before do
-        visit contact_path
+        visit new_feedback_path
         fill_contact_form('user@example.com', 'Message text')
       end
 
       it { page.body.should have_content('Thank you for contacting us. We have received your message and will respond shortly.') }
-      it { current_path.should be_eql contact_path }
+      it { current_path.should be_eql new_feedback_path }
     end
 
     context 'fill form with' do
       context 'all blank' do
         before do
-          visit contact_path
+          visit new_feedback_path
           fill_contact_form('', '')
         end
 
@@ -28,7 +28,7 @@ describe "Feedback page" do
 
       context 'invalid email' do
         before do
-         visit contact_path
+         visit new_feedback_path
          fill_contact_form('user@@example.com', 'Message text')
        end
 

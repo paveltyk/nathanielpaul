@@ -16,7 +16,7 @@ describe FeedbacksController do
       before { post :create, params }
 
       it { should respond_with(:redirect) }
-      it { response.should redirect_to(contact_path) }
+      it { response.should redirect_to(new_feedback_path) }
       it { flash[:notice].should eq('Thank you for contacting us. We have received your message and will respond shortly.') }
     end
 
