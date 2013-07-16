@@ -11,7 +11,7 @@
       p For retail or wholesale inquires please use the form below to contact us.
       p Thank you for choosing Nathaniel Paul Designs.
 
-      = simple_form_for @feedback do |f|
+      = simple_form_for @feedback, url: new_feedback_path do |f|
         = f.input :email
         = f.input :subject
         = f.input :message, :as => :text
