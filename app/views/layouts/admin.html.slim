@@ -18,9 +18,6 @@ html.no-js lang="#{::I18n.locale}"
     = csrf_meta_tags
 
   body
-    .container-wrap
-      .page-content
-        .container-fluid
-          = yield
+    .container= yield
 
     = javascript_include_tag "admin"
