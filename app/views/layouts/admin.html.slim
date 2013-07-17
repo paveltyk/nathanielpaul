@@ -18,6 +18,19 @@ html.no-js lang="#{::I18n.locale}"
     = csrf_meta_tags
 
   body
-    .container= yield
+    .container
+      .navbar.navbar-inverse
+        .navbar-inner
+          = link_to 'Nathaniel Paul', admin_path, :class => :brand
+          .nav
+            span.label.label-info = Rails.env
+
+          ul.nav.pull-right
+            li
+              = link_to 'Collections Management', '#'
+            li
+              = link_to 'Frontend', root_path
+
+      = yield
 
     = javascript_include_tag "admin"
