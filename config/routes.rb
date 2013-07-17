@@ -8,4 +8,8 @@ Nathan::Application.routes.draw do
 
   match '/contact' => 'feedbacks#new', :via => :get, :as => :new_feedback
   match '/contact' => 'feedbacks#create', :via => :post
+
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+  end
 end
