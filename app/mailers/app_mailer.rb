@@ -3,7 +3,7 @@ class AppMailer < ActionMailer::Base
     mail(
       :to => ENV['CONTACT_EMAIL'],
       :from => contact,
-      :subject => 'New message from contact form',
+      :subject => 'New Nathaniel Paul Inquiry',
       :body => message
       )
   end

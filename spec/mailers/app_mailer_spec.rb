@@ -6,7 +6,7 @@ describe AppMailer do
 
     before { ENV['CONTACT_EMAIL'] = 'admin@site.com' }
 
-    it { email.subject.should be_eql 'New message from contact form' }
+    it { email.subject.should be_eql 'New Nathaniel Paul Inquiry' }
     it { email.from.should be_eql ['user@example.com'] }
     it { email.to.should be_eql ['admin@site.com'] }
     it { email.body.encoded.should be_eql 'Sample message' }
