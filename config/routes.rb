@@ -11,5 +11,7 @@ Nathan::Application.routes.draw do
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
+
+    resources :collections
   end
 end

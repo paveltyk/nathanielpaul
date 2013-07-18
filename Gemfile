@@ -7,6 +7,7 @@ gem 'jquery-rails', '~> 2.0.0'
 gem 'thin'
 gem 'sendgrid-rails', '~> 2.0.2'
 gem 'simple_form'
+gem 'strong_parameters'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
