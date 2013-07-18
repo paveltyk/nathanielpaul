@@ -1,9 +1,8 @@
 require 'spec_helper'
 
 describe Collection do
-  let(:collection) { create :collection }
+  subject { build :collection }
 
   it { should validate_presence_of(:name) }
-
-  it { collection.should be_valid }
+  it { should be_valid }
 end
