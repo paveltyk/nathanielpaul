@@ -26,8 +26,10 @@ html.no-js lang="#{::I18n.locale}"
             span.label.label-info= Rails.env
 
           = render_navigation(:context => :admin)
+    .spacer20
 
     .container
+      = render 'flash_notifications'
       = yield
 
     = javascript_include_tag "admin"

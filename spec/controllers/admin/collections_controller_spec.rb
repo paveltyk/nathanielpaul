@@ -38,7 +38,7 @@ describe Admin::CollectionsController do
   end
 
   describe '#create' do
-    let(:params) { { :collection => {:name => 'Collection'}, :id => collection.id } }
+    let(:params) { { :collection => {:name => 'Collection'} } }
 
     describe "with valid params" do
       before { post :create, params }

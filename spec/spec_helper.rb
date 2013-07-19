@@ -25,6 +25,7 @@ RSpec.configure do |config|
 
   config.include FeedbackSpecHelper
   config.include AuthHelper
+  config.include RequestAuthHelper, :type => :request
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

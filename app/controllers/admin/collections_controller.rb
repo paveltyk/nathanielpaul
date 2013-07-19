@@ -1,6 +1,6 @@
 class Admin::CollectionsController < Admin::BaseController
   def index
-    @collections = Collection.all
+    @collections = Collection.order('created_at DESC')
   end
 
   def show
@@ -8,7 +8,7 @@ class Admin::CollectionsController < Admin::BaseController
   end
 
   def new
-    @collection = Collection.new
+    @collection = Collection.new(:active => true)
   end
 
   def edit
