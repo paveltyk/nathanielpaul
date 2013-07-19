@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Admin::CollectionsController do
   before { http_login }
 
-  let(:collection) { create :collection }
+  let!(:collection) { create :collection }
 
   describe '#index' do
     before { get :index }
@@ -80,11 +80,9 @@ describe Admin::CollectionsController do
   end
 
   describe '#destroy' do
-    before { post :destroy, :id => collection.id }
+    subject { post :destroy, :id => collection.id }
 
-    it { should respond_with(:redirect) }
+    it { expect { subject }.to change(Collection, :count).by(-1) }
     it { should redirect_to(admin_collections_path) }
-    it { should set_the_flash }
-    it { Collection.count.should be 0 }
   end
 end
