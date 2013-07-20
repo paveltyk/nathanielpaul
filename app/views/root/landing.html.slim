@@ -2,6 +2,9 @@
 - content_for :title do
   | Home | Nathaniel Paul
 
+.loading
+  img src="data:image/png;base64,#{Base64.encode64(@logo_path.read)}" alt="Loading'''"
+  | Loading...
 .flexslider
   ul.slides
     - %w(landing_1.jpg landing_2.jpg).each do |image_name|
