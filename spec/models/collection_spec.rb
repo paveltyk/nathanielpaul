@@ -6,6 +6,8 @@ describe Collection do
   it { should validate_presence_of(:name) }
   it { should be_valid }
 
+  it { should have_many(:items).dependent(:destroy) }
+
   describe 'deactivate_active_collections' do
     let!(:collection) { create :collection, :active => true }
 

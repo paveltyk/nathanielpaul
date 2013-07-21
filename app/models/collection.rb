@@ -3,6 +3,8 @@ class Collection < ActiveRecord::Base
 
   after_save :deactivate_active_collections, :if => 'active && active_changed?'
 
+  has_many :items, :dependent => :destroy, :class_name => 'CollectionItem'
+
   private
 
   def deactivate_active_collections
