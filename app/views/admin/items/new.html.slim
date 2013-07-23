@@ -1,0 +1,9 @@
+.spacer40
+
+= simple_form_for @item, :url => admin_collection_items_path, :html => { :multipart => true, :class => 'form-horizontal' } do |f|
+  = f.simple_fields_for :photos do |p|
+    - if p.object.try(:new_record?)
+      = p.input :image, label: 'Add a Photo'
+
+  .form-actions
+    = f.submit :Save, :class => 'btn btn-primary'

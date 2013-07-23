@@ -9,6 +9,7 @@ class Admin::ItemsController < Admin::BaseController
 
   def new
     @item = CollectionItem.new
+    5.times { @item.photos.build }
   end
 
   def edit
@@ -17,7 +18,7 @@ class Admin::ItemsController < Admin::BaseController
 
   def create
     @collection = Collection.find(params[:collection_id])
-    @item = @collection.items.build(params[:collection_item])
+    @item = @collection.items.build(item_params)
 
     if @item.save
       redirect_to admin_collection_item_path(@collection, @item), :notice => 'Item was successfully created.'
@@ -29,7 +30,7 @@ class Admin::ItemsController < Admin::BaseController
   def update
     @item = CollectionItem.find(params[:id])
 
-    if @item.update_attributes(params[:collection_item])
+    if @item.update_attributes(item_params)
       redirect_to admin_collection_item_path(@item), :notice => 'Item was successfully updated.'
     else
       render :edit
@@ -44,6 +45,6 @@ class Admin::ItemsController < Admin::BaseController
   private
 
   def item_params
-    # params.require(:collection_item).permit()
+    params.require(:collection_item).permit(:photos_attributes => [:image, :active])
   end
 end

@@ -1,0 +1,8 @@
+ul.thumbnails
+  - @item.photos.each do |photo|
+    li.span3
+      div.thumbnail
+        = image_tag photo.image_url(:tiny) if photo.image?
+        .caption
+          p
+            = link_to 'Delete', admin_collection_item_photo_path(@item.collection, @item, photo), :method => :delete, :data => { confirm: 'Are you sure?' }, :class => 'btn btn-small btn-danger'
