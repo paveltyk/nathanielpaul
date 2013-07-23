@@ -13,7 +13,7 @@ Nathan::Application.routes.draw do
     get '', to: 'dashboard#index', as: '/'
 
     resources :collections do
-      resources :items do
+      resources :items, :except => [:index] do
         resources :photos, :only => [:create, :destroy]
       end
     end

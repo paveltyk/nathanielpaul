@@ -1,2 +1,9 @@
-.pull-right
-  = link_to 'New item', new_admin_collection_item_path(@collection), :class => 'btn btn-primary'
+ul.thumbnails
+  - @collection.items.each do |item|
+    li.span3
+      = link_to  admin_collection_item_path(@collection, item), :class => :thumbnail
+        / TODO replace first with Active image
+        = image_tag item.photos.first.image_url(:tiny) if item.photos.first.image?
+
+
+p = link_to 'New item', new_admin_collection_item_path(@collection), :class => 'btn btn-primary'

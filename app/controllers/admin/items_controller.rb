@@ -1,19 +1,16 @@
 class Admin::ItemsController < Admin::BaseController
-  def index
-    @items = CollectionItem.order('created_at DESC')
-  end
-
   def show
     @item = CollectionItem.find(params[:id])
   end
 
   def new
     @item = CollectionItem.new
-    5.times { @item.photos.build }
+    build_5_photos_for_item
   end
 
   def edit
     @item = CollectionItem.find(params[:id])
+    build_5_photos_for_item
   end
 
   def create
@@ -23,6 +20,7 @@ class Admin::ItemsController < Admin::BaseController
     if @item.save
       redirect_to admin_collection_item_path(@collection, @item), :notice => 'Item was successfully created.'
     else
+      build_5_photos_for_item
       render :new
     end
   end
@@ -31,7 +29,7 @@ class Admin::ItemsController < Admin::BaseController
     @item = CollectionItem.find(params[:id])
 
     if @item.update_attributes(item_params)
-      redirect_to admin_collection_item_path(@item), :notice => 'Item was successfully updated.'
+      redirect_to admin_collection_item_path(@item.collection, @item), :notice => 'Item was successfully updated.'
     else
       render :edit
     end
@@ -45,6 +43,10 @@ class Admin::ItemsController < Admin::BaseController
   private
 
   def item_params
-    params.require(:collection_item).permit(:photos_attributes => [:image, :active])
+    params.fetch(:collection_item, {}).permit(:photos_attributes => [:image, :active])
+  end
+
+  def build_5_photos_for_item
+    5.times { @item.photos.build }
   end
 end

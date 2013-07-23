@@ -6,14 +6,6 @@ describe Admin::ItemsController do
   let!(:collection) { create :collection }
   let!(:item) { create :collection_item, :collection => collection }
 
-  describe '#index' do
-    before { get :index, :collection_id => collection.id }
-
-    it { should respond_with(:success) }
-    it { should render_template(:index) }
-    it { should_not set_the_flash }
-  end
-
   describe '#show' do
     before { get :show, { :id => item.id, :collection_id => collection.id } }
 
@@ -39,7 +31,7 @@ describe Admin::ItemsController do
   end
 
   describe '#create' do
-    let(:params) { { :collection_item => attributes_for(:collection_item), :collection_id => collection.id, :id => item.id } }
+    let(:params) { { :collection_item => attributes_for(:collection_item).merge(:photos_attributes => [{ :image => photo_image_params }]), :collection_id => collection.id, :id => item.id } }
 
     describe "with valid params" do
       before { post :create, params }
@@ -47,10 +39,20 @@ describe Admin::ItemsController do
       it { should respond_with(:redirect) }
       it { should set_the_flash }
     end
+
+    describe "with invalid params" do
+      before do
+        params[:collection_item][:photos_attributes] = nil
+        post :create, params
+      end
+
+      it { should render_template(:new) }
+      it { should_not set_the_flash }
+    end
   end
 
   describe '#update' do
-    let(:params) { { :id => item.id, :collection_id => collection.id } }
+    let(:params) { { :collection_item => attributes_for(:collection_item).merge(:photos_attributes => [{ :image => photo_image_params }]), :collection_id => collection.id, :id => item.id } }
 
     describe "with valid params" do
       before { post :update, params }

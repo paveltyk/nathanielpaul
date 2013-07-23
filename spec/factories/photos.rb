@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :photo do
-    image { fixture_file_upload(Rails.root.join('assets', 'images', 'rails.png'), 'image/png') }
+    image { photo_image_params }
     active true
     collection_item
   end
