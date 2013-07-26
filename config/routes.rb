@@ -14,7 +14,9 @@ Nathan::Application.routes.draw do
 
     resources :collections do
       resources :items, :except => [:index] do
-        resources :photos, :only => [:create, :destroy]
+        resources :photos, :only => [:destroy] do
+          get :make_active, :on => :member
+        end
       end
     end
   end

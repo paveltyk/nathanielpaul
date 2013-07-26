@@ -5,6 +5,8 @@ class CollectionItem < ActiveRecord::Base
   validates :collection, :presence => true
   validate :must_have_one_photo
 
+  after_save :set_active_photo
+
   accepts_nested_attributes_for :photos, :allow_destroy => true
 
   def photos_empty?
@@ -19,5 +21,9 @@ class CollectionItem < ActiveRecord::Base
 
   def set_collection_item_for_photo(photo)
     photo.collection_item = self
+  end
+
+  def set_active_photo
+    photos.first.update_attributes :active => true unless Photo.active_photos(id).present?
   end
 end

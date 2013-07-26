@@ -1,10 +1,12 @@
 ul.thumbnails
   - @item.photos.each do |photo|
     li.span3
-      div.thumbnail
+      div.thumbnail class=('alert-success' if photo.active?)
         = image_tag photo.image_url(:tiny) if photo.image?
         .caption
-          p
+          p.text-center
+            = link_to 'Set active', make_active_admin_collection_item_photo_path(@item.collection, @item, photo), :class => 'btn btn-small btn-success'
+            | &nbsp;
             = link_to 'Delete', admin_collection_item_photo_path(@item.collection, @item, photo), :method => :delete, :data => { confirm: 'Are you sure?' }, :class => 'btn btn-small btn-danger'
 
 
