@@ -5,6 +5,10 @@ class Collection < ActiveRecord::Base
 
   has_many :items, :dependent => :destroy, :class_name => 'CollectionItem'
 
+  def to_s
+    name.presence || 'No Name'
+  end
+
   private
 
   def deactivate_active_collections

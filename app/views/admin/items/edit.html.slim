@@ -1,3 +1,6 @@
-.span6
-  h2 Add photos to collection item
-  = render 'form', :path => admin_collection_item_path(@item)
+.row
+  .span12
+    h1 Add photos to collection item
+    hr
+  .span6
+    = render 'form', :path => admin_collection_item_path(@collection, @item)

@@ -1,7 +1,11 @@
-ul.thumbnails
-  - @collection.items.each do |item|
-    li.span3
-      = link_to  admin_collection_item_path(@collection, item), :class => :thumbnail
-        = image_tag item.find_active_photo.image_url(:tiny)
-
-p = link_to 'New item', new_admin_collection_item_path(@collection), :class => 'btn btn-primary'
+.row
+  .span12
+    h1
+      | Collection "#{@collection}"
+      = link_to 'New item', new_admin_collection_item_path(@collection), class: 'btn btn-primary btn-large pull-right'
+    hr
+    ul.thumbnails
+      - @collection.items.each do |item|
+        li.span2
+          = link_to  admin_collection_item_path(@collection, item), :class => :thumbnail
+            = image_tag item.find_active_photo.image_url(:tiny)

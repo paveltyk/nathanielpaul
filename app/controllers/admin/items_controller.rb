@@ -1,4 +1,5 @@
 class Admin::ItemsController < Admin::BaseController
+  before_filter :find_collection, only: [:show, :new, :create, :edit, :update]
   def show
     @item = CollectionItem.find(params[:id])
   end
@@ -14,7 +15,6 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def create
-    @collection = Collection.find(params[:collection_id])
     @item = @collection.items.build(item_params)
 
     if @item.save
@@ -41,6 +41,10 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   private
+
+  def find_collection
+    @collection = Collection.find(params[:collection_id])
+  end
 
   def item_params
     params.fetch(:collection_item, {}).permit(:photos_attributes => [:image, :active])

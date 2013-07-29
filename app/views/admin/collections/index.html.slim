@@ -1,18 +1,21 @@
-h1
-  | Manage Collections
-  = link_to 'New collection', new_admin_collection_path, :class => 'btn btn-primary pull-right'
-
-table.table.table-hover.table-striped
-  tr
-    th Name
-    th Active state
-    th Actions
-  - @collections.each do |collection|
-    tr class=('success' if collection.active?)
-      td  = collection.name
-      td  = collection.active? ? 'Active' : 'Disabled'
-      td
-        |  #{link_to 'Show', admin_collection_path(collection), :class => 'btn btn-small'}
-        |  #{link_to 'Edit', edit_admin_collection_path(collection), :class => 'btn btn-small btn-primary'}
-        |  #{link_to 'Delete', admin_collection_path(collection), :method => :delete, :data => { confirm: 'Are you sure?' }, :class => 'btn btn-small btn-danger'}
-
+.row
+  .span12
+    h1
+      | Manage Collections
+      = link_to 'New collection', new_admin_collection_path, :class => 'btn btn-primary btn-large pull-right'
+    hr
+    table.table.table-hover.table-striped
+      thead
+        tr
+          th Name
+          th Active state
+          th Actions
+      tbody
+        - @collections.each do |collection|
+          tr class=('success' if collection.active?)
+            td  = collection.name
+            td  = collection.active? ? 'Active' : 'Disabled'
+            td
+              |  #{link_to 'Show', admin_collection_path(collection), :class => 'btn btn-small'}
+              |  #{link_to 'Edit', edit_admin_collection_path(collection), :class => 'btn btn-small btn-primary'}
+              |  #{link_to 'Delete', admin_collection_path(collection), :method => :delete, :data => { confirm: 'Are you sure?' }, :class => 'btn btn-small btn-danger'}

@@ -1,3 +1,6 @@
-.span6
-  h2 New collection item
-  = render 'form', :path => admin_collection_items_path
+.row
+  .span12
+    h1 New item in collection "#{@collection}"
+    hr
+  .span6
+    = render 'form', :path => admin_collection_items_path

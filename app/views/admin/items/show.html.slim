@@ -1,13 +1,16 @@
-ul.thumbnails
-  - @item.photos.each do |photo|
-    li.span3
-      div.thumbnail class=('alert-success' if photo.active?)
-        = image_tag photo.image_url(:small) if photo.image?
-        .caption
-          p.text-center
-            = link_to 'Set main', make_active_admin_collection_item_photo_path(@item.collection, @item, photo), :class => 'btn btn-small btn-success', :method => :post unless photo.active?
-            | &nbsp;
-            = link_to 'Delete', admin_collection_item_photo_path(@item.collection, @item, photo), :method => :delete, :data => { confirm: 'Are you sure?' }, :class => 'btn btn-small btn-danger'
-
-
-p = link_to 'Add photos', edit_admin_collection_item_path(@item.collection, @item), :class => 'btn btn-primary'
+.row
+  .span12
+    h1
+      | Collection item in "#{link_to @collection, [:admin, @collection]}"
+      = link_to 'Add photos', edit_admin_collection_item_path(@collection, @item), :class => 'btn btn-primary btn-large pull-right'
+    hr
+    ul.thumbnails
+      - @item.photos.each do |photo|
+        li.span3
+          div.thumbnail class=('alert-success' if photo.active?)
+            = image_tag photo.image_url(:small) if photo.image?
+            .caption
+              p.text-center
+                = link_to 'Set main', make_active_admin_collection_item_photo_path(@item.collection, @item, photo), :class => 'btn btn-small btn-success', :method => :post unless photo.active?
+                | &nbsp;
+                = link_to 'Delete', admin_collection_item_photo_path(@item.collection, @item, photo), :method => :delete, :data => { confirm: 'Are you sure?' }, :class => 'btn btn-small btn-danger'

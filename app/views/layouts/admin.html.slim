@@ -29,7 +29,8 @@ html.no-js lang="#{::I18n.locale}"
     .spacer20
 
     .container
-      = render 'flash_notifications'
+      .row
+        .span12= render 'flash_notifications'
       = yield
 
     = javascript_include_tag "admin"

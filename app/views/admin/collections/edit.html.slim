@@ -1,3 +1,6 @@
-.span6
-  h1 Edit collection
-  = render 'form', :path => admin_collection_path(@collection)
+.row
+  .span12
+    h1 Edit collection "#{@collection}"
+    hr
+  .span6
+    = render 'form', :path => admin_collection_path(@collection)
