@@ -13,6 +13,10 @@ class CollectionItem < ActiveRecord::Base
     photos.empty? || photos.all? {|photo| photo.image.blank? }
   end
 
+  def find_active_photo
+    photos.find_by_active(true)
+  end
+
   private
 
   def must_have_one_photo
