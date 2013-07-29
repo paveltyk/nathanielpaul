@@ -15,11 +15,10 @@ describe Admin::PhotosController do
     context do
       before do
         post :destroy, params
-        item.reload
       end
 
-      it { item.photos.count.should eq 0 }
-      it { should redirect_to(admin_collection_item_path(collection, item)) }
+      it { CollectionItem.find_by_id(item.id).should be_nil }
+      it { should redirect_to(admin_collection_path(collection)) }
       it { should set_the_flash }
     end
   end

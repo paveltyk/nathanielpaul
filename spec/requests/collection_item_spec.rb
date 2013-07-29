@@ -48,6 +48,17 @@ describe 'Admin Collection item page' do
       it { item.photos.count.should eq 1 }
     end
 
+    context 'delete last photo' do
+      before do
+        visit admin_collection_item_path(collection, item)
+        click_link 'Delete'
+        collection.reload
+      end
+
+      it { page.body.should have_content('Item was successfully deleted.') }
+      it { CollectionItem.find_by_id(item.id).should be_nil }
+    end
+
     context 'add second photo to item' do
       before do
         @item_photos = item.photos.order('created_at ASC')
