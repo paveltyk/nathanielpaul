@@ -10,6 +10,7 @@ gem 'simple_form'
 gem 'strong_parameters'
 gem 'rmagick'
 gem 'carrierwave'
+gem 'fog'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
