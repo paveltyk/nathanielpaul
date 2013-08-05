@@ -1,5 +1,10 @@
 .row
   .span12
+    ul.breadcrumb
+      li #{link_to 'Dashboard', admin_path} <span class="divider">/</span>
+      li #{link_to 'Collections', admin_collections_path} <span class="divider">/</span>
+      li.active #{@collection}
+  .span12
     h1
       | Collection "#{@collection}"
       = link_to 'New item', new_admin_collection_item_path(@collection), class: 'btn btn-primary btn-large pull-right'

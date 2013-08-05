@@ -1,5 +1,9 @@
 .row
   .span12
+    ul.breadcrumb
+      li #{link_to 'Dashboard', admin_path} <span class="divider">/</span>
+      li.active Collections
+  .span12
     h1
       | Manage Collections
       = link_to 'New collection', new_admin_collection_path, :class => 'btn btn-primary btn-large pull-right'

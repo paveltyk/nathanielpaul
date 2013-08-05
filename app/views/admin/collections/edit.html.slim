@@ -1,5 +1,11 @@
 .row
   .span12
+    ul.breadcrumb
+      li #{link_to 'Dashboard', admin_path} <span class="divider">/</span>
+      li #{link_to 'Collections', admin_collections_path} <span class="divider">/</span>
+      li #{link_to @collection, admin_collection_path(@collection)} <span class="divider">/</span>
+      li.active Edit
+  .span12
     h1 Edit collection "#{@collection}"
     hr
   .span6
