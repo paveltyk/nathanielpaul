@@ -63,7 +63,7 @@ describe 'Admin Collection item page' do
       before do
         @item_photos = item.photos.order('created_at ASC')
         visit edit_admin_collection_item_path(collection, item)
-        attach_file('collection_item[photos_attributes][5][image]', File.join(Rails.root, '/spec/files/rails.png'))
+        attach_file('collection_item[photos_attributes][4][image]', File.join(Rails.root, '/spec/files/rails.png'))
         click_button 'Save'
         collection.reload
       end
