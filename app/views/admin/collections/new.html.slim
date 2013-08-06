@@ -1,7 +1,6 @@
 .row
-  .span12
-    div.breadcrumb
-      = render_breadcrumbs :separator => ' / '
+  .span12= breadcrumbs_menu do
+    - add_breadcrumb 'New collection'
   .span12
     h1 New collection
     hr

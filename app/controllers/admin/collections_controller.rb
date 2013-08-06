@@ -8,21 +8,14 @@ class Admin::CollectionsController < Admin::BaseController
 
   def show
     @collection = Collection.find(params[:id])
-
-    add_breadcrumb @collection.name, admin_collection_path(@collection)
   end
 
   def new
     @collection = Collection.new(:active => true)
-
-    add_breadcrumb 'New collection', new_admin_collection_path
   end
 
   def edit
     @collection = Collection.find(params[:id])
-
-    add_breadcrumb @collection.name, admin_collection_path(@collection)
-    add_breadcrumb 'Edit', edit_admin_collection_path(@collection)
   end
 
   def create

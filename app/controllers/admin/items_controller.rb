@@ -1,31 +1,24 @@
 class Admin::ItemsController < Admin::BaseController
-  before_filter :find_collection, only: [:show, :new, :create, :edit, :update]
+  before_filter :find_collection, except: [:destroy]
 
   add_breadcrumb 'Dashboard', :admin_path
   add_breadcrumb 'Collections', :admin_collections_path
+  add_breadcrumb lambda { |c| c.instance_variable_get(:@collection)},
+                 lambda { |c| c.admin_collection_path(c.instance_variable_get(:@collection)) },
+                 except: [:destroy]
 
   def show
     @item = CollectionItem.find(params[:id])
-
-    add_parent_collection_breadcrumb
-    add_breadcrumb 'Items', admin_collection_item_path(@collection, @item)
   end
 
   def new
     @item = CollectionItem.new
     build_4_photos_for_item
-
-    add_parent_collection_breadcrumb
-    add_breadcrumb 'Add new item', new_admin_collection_item_path(@collection)
   end
 
   def edit
     @item = CollectionItem.find(params[:id])
     build_4_photos_for_item
-
-    add_parent_collection_breadcrumb
-    add_breadcrumb 'Item', admin_collection_item_path(@collection, @item)
-    add_breadcrumb 'Add photos to item', edit_admin_collection_item_path(@collection, @item)
   end
 
   def create
@@ -66,9 +59,5 @@ class Admin::ItemsController < Admin::BaseController
 
   def build_4_photos_for_item
     4.times { @item.photos.build }
-  end
-
-  def add_parent_collection_breadcrumb
-    add_breadcrumb @collection.name, admin_collection_path(@collection)
   end
 end
