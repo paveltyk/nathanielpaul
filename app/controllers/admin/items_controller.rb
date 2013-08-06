@@ -13,12 +13,12 @@ class Admin::ItemsController < Admin::BaseController
 
   def new
     @item = CollectionItem.new
-    build_4_photos_for_item
+    build_photos_for_item
   end
 
   def edit
     @item = CollectionItem.find(params[:id])
-    build_4_photos_for_item
+    build_photos_for_item
   end
 
   def create
@@ -27,7 +27,7 @@ class Admin::ItemsController < Admin::BaseController
     if @item.save
       redirect_to admin_collection_item_path(@collection, @item), :notice => 'Item was successfully created.'
     else
-      build_4_photos_for_item
+      build_photos_for_item
       render :new
     end
   end
@@ -57,7 +57,7 @@ class Admin::ItemsController < Admin::BaseController
     params.fetch(:collection_item, {}).permit(:photos_attributes => [:image, :active])
   end
 
-  def build_4_photos_for_item
+  def build_photos_for_item
     4.times { @item.photos.build }
   end
 end
