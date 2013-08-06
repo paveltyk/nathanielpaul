@@ -11,6 +11,7 @@ gem 'strong_parameters'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'fog'
+gem 'breadcrumbs_on_rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

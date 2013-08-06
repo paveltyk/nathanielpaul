@@ -1,8 +1,7 @@
 .row
   .span12
-    ul.breadcrumb
-      li #{link_to 'Dashboard', admin_path} <span class="divider">/</span>
-      li.active Collections
+    div.breadcrumb
+      = render_breadcrumbs :separator => ' / '
   .span12
     h1
       | Manage Collections

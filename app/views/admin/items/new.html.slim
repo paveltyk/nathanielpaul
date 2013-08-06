@@ -1,10 +1,7 @@
 .row
   .span12
-    ul.breadcrumb
-      li #{link_to 'Dashboard', admin_path} <span class="divider">/</span>
-      li #{link_to 'Collections', admin_collections_path} <span class="divider">/</span>
-      li #{link_to @collection, admin_collection_path(@collection)} <span class="divider">/</span>
-      li.active New Item
+    div.breadcrumb
+      = render_breadcrumbs :separator => ' / '
   .span12
     h1 New item in collection "#{@collection}"
     hr
