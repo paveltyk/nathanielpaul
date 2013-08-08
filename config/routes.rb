@@ -20,4 +20,6 @@ Nathan::Application.routes.draw do
       end
     end
   end
+
+  resource :collection, :only => [:show]
 end

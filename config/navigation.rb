@@ -51,6 +51,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     primary.item :home, 'home', root_path
     primary.item :about, 'about', about_path
+    primary.item :collections, 'collections', collection_path
     primary.item :contact, 'contact', new_feedback_path, highlights_on: /contact/i
 
     # # Add an item which has a sub navigation (same params, but with block)

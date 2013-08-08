@@ -1,0 +1,10 @@
+.row-fluid
+  .span8.offset2
+    = render 'flash_notifications'
+
+    .collections_wrapper
+      ul.thumbnails
+      - @collection.items.each do |item|
+        li.span2
+          = link_to '#', :class => :thumbnail
+            = image_tag item.find_active_photo.image_url(:small)
