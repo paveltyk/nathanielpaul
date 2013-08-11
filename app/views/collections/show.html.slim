@@ -2,9 +2,9 @@
   .span8.offset2
     = render 'flash_notifications'
 
-    .collections_wrapper
-      ul.thumbnails
-      - @collection.items.each do |item|
-        li.span2
-          = link_to '#', :class => :thumbnail
-            = image_tag item.find_active_photo.image_url(:small)
+    .swiper-container
+      .swiper-wrapper
+        - @collection.items.each do |item|
+          .swiper-slide style="background-image:url(#{item.find_active_photo.image_url(:medium)});"
+            a href='#'
+            .reflection
