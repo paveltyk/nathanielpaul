@@ -8,3 +8,17 @@
           .swiper-slide style="background-image:url(#{item.active_photo.image_url(:medium)});"
             a href='#'
             .reflection
+- content_for :scripts do
+  javascript:
+    new Swiper('.swiper-container',{
+      slidesPerView: 3,
+      loop: true,
+      calculateHeight: true,
+      tdFlow: {
+        rotate: 0,
+        stretch: -50,
+        depth: 450,
+        modifier: 1,
+        shadows: true,
+      }
+    })

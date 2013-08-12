@@ -11,3 +11,14 @@
       li style='background-image:url(#{asset_path(image_name)});'
 
 .bottom-nav-bg
+- content_for :scripts do
+  javascript:
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: 'fade',
+        easing: 'swing',
+        controlNav: false,
+        slideshowSpeed: 7000,
+        animationSpeed: 900
+        })
+      });
