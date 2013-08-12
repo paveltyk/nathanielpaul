@@ -1,24 +1,26 @@
 .row-fluid
-  .span8.offset2
+  .span12
     = render 'flash_notifications'
-
-    .swiper-container
-      .swiper-wrapper
-        - @collection.items.each do |item|
-          .swiper-slide style="background-image:url(#{item.active_photo.image_url(:medium)});"
-            a href='#'
-            .reflection
+    .collection
+      .collection-wrap
+        .swiper-container
+          .swiper-wrapper
+            - @collection.items.each do |item|
+              .swiper-slide
+                a(href='##{item.active_photo.image}')= image_tag item.active_photo.image_url(:medium)
 - content_for :scripts do
   javascript:
     new Swiper('.swiper-container',{
-      slidesPerView: 3,
-      loop: true,
+      slidesPerView: 'auto',
       calculateHeight: true,
+      keyboardControl: true,
+      centeredSlides: true,
+      initialSlide: 2,
       tdFlow: {
         rotate: 0,
-        stretch: -50,
-        depth: 450,
+        stretch: -30,
+        depth: 200,
         modifier: 1,
-        shadows: true,
+        shadows: false,
       }
     })
