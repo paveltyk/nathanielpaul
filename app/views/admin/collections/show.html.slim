@@ -10,4 +10,4 @@
       - @collection.items.each do |item|
         li.span2
           = link_to  admin_collection_item_path(@collection, item), :class => :thumbnail
-            = image_tag item.find_active_photo.image_url(:tiny)
+            = image_tag item.active_photo.image_url(:tiny)

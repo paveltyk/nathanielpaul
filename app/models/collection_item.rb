@@ -1,6 +1,7 @@
 class CollectionItem < ActiveRecord::Base
   belongs_to :collection
   has_many :photos, :dependent => :destroy, :before_add => :set_collection_item_for_photo
+  has_one :active_photo, readonly: true, class_name: 'Photo', conditions: {active: true}
 
   validates :collection, :presence => true
   validate :must_have_one_photo
@@ -11,10 +12,6 @@ class CollectionItem < ActiveRecord::Base
 
   def photos_empty?
     photos.empty? || photos.all? {|photo| photo.image.blank? }
-  end
-
-  def find_active_photo
-    photos.find_by_active(true)
   end
 
   private

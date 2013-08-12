@@ -5,6 +5,6 @@
     .swiper-container
       .swiper-wrapper
         - @collection.items.each do |item|
-          .swiper-slide style="background-image:url(#{item.find_active_photo.image_url(:medium)});"
+          .swiper-slide style="background-image:url(#{item.active_photo.image_url(:medium)});"
             a href='#'
             .reflection
