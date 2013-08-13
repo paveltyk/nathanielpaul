@@ -34,4 +34,5 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
 .collection {position:relative;overflow:visible;}
 .collection .collection-wrap {position:absolute;left:0;right:0;height:525px;margin-top:-262px;background:red;top:0;background:red;height:100%;}
 .collection .swiper-container {width:100%;}
-.collection .swiper-slide {width:350px;height:525px;}
+.collection .swiper-slide {width:350px;height:525px;opacity:.75;}
+.collection .swiper-slide.swiper-slide-active {opacity:1;}
