@@ -36,3 +36,6 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
 .collection .swiper-container {width:100%;}
 .collection .swiper-slide {width:350px;height:525px;opacity:.75;}
 .collection .swiper-slide.swiper-slide-active {opacity:1;}
+// Item page custom styles
+.thumblist{overflow-y: auto;  position: relative; height: 450px;margin: 20px;}
+.item-btn{width: 260px;}
