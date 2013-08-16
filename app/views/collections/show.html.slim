@@ -8,7 +8,8 @@
             .swiper-wrapper
               - @collection.items.each do |item|
                 .swiper-slide
-                  a(href='##{item.active_photo.image}')= image_tag item.active_photo.image_url(:medium)
+                  = link_to collection_item_path(item)
+                    = image_tag item.active_photo.image_url(:medium)
     - else
       .span8.offset2
         | Sorry, but currently there are no collections

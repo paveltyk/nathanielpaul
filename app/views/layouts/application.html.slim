@@ -23,7 +23,7 @@ html.no-js lang="#{::I18n.locale}"
   body
     .container-wrap
       .page-content class=('landing' if landing_style?)
-        .container-fluid
+        div(class='container#{'-fluid' unless fixed_layout? }')
           = yield
           .bottom-nav= render_navigation
 
