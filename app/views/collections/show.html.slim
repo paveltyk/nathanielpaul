@@ -13,20 +13,31 @@
     - else
       .span8.offset2
         | Sorry, but currently there are no collections
-
 - content_for :scripts do
   javascript:
-    new Swiper('.swiper-container',{
-      slidesPerView: 'auto',
-      calculateHeight: true,
-      keyboardControl: true,
-      centeredSlides: true,
-      initialSlide: 2,
-      tdFlow: {
-        rotate: -10,
-        stretch: -30,
-        depth: 200,
-        modifier: 1,
-        shadows: false,
+    var swiperClickHandler = function(swiper){
+      if (swiper.activeIndex != swiper.clickedSlideIndex){
+        swiper.swipeTo(swiper.clickedSlideIndex)
+      } else {
+        window.location = $(swiper.activeSlide()).find('a').attr('href');
       }
-    })
+    };
+    $(document).ready(function(){
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        calculateHeight: true,
+        keyboardControl: true,
+        centeredSlides: true,
+        initialSlide: 2,
+        preventLinks: true,
+        tdFlow: {
+          rotate: -10,
+          stretch: -30,
+          depth: 200,
+          modifier: 1,
+          shadows: false,
+        },
+        onSlideClick: swiperClickHandler
+      });
+      $('.swiper-slide').on('click', function(e){ e.preventDefault(); })
+    });
