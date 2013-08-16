@@ -1,21 +1,15 @@
 .row
   .span4.offset2
-    =link_to "Back to the collection",collection_path , :class => "btn btn-large item-btn"
+    = link_to 'Back to the collection', collection_path, :class => 'btn btn-large item-btn'
     #largeimage
-      =image_tag @item.active_photo.image_url(:medium)
+      = image_tag @item.active_photo.image_url(:medium)
   .span7
-    =link_to "Download as PDF",'#',:method => "get",:class => "btn btn-large item-btn"
+    = link_to 'Download as PDF', '#', :class => 'btn btn-large item-btn'
     .thumblist
       ul.thumbnails
         - @item.photos.each do |photo|
           li.span2
-            a.thumbnail.image
-              =image_tag photo.image_url if photo.image?
+            a.thumbnail.image= image_tag photo.image_url(:small) if photo.image?
     ul.inline
-      li
-        =link_to "Share on FB",'#',:class => "btn btn-medium"
-      li
-        =link_to "Share on Twitter",'#',:class => "btn btn-medium"
-
-      
-
+      li= link_to 'Share on FB', '#', :class => 'btn btn-medium'
+      li= link_to 'Share on Twitter', '#', :class => 'btn btn-medium'

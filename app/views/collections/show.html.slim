@@ -7,7 +7,7 @@
           .swiper-wrapper
             - @collection.items.each do |item|
               .swiper-slide
-                = link_to  collection_item_path(item)
+                = link_to collection_item_path(item)
                   = image_tag item.active_photo.image_url(:medium)
 - content_for :scripts do
   javascript:
