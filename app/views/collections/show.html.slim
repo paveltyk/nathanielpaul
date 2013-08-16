@@ -1,13 +1,18 @@
 .row-fluid
   .span12
     = render 'flash_notifications'
-    .collection
-      .collection-wrap
-        .swiper-container
-          .swiper-wrapper
-            - @collection.items.each do |item|
-              .swiper-slide
-                a(href='##{item.active_photo.image}')= image_tag item.active_photo.image_url(:medium)
+    - if @collection.present?
+      .collection
+        .collection-wrap
+          .swiper-container
+            .swiper-wrapper
+              - @collection.items.each do |item|
+                .swiper-slide
+                  a(href='##{item.active_photo.image}')= image_tag item.active_photo.image_url(:medium)
+    - else
+      .span8.offset2
+        | Sorry, but currently there are no collections
+
 - content_for :scripts do
   javascript:
     new Swiper('.swiper-container',{
