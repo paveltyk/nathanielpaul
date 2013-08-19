@@ -76,6 +76,6 @@ module Nathan
     end
 
     config.assets.initialize_on_precompile = false
-    config.assets.precompile += %w(modernizr-min.js admin.css admin.js)
+    config.assets.precompile += %w(modernizr-min.js admin.css admin.js collection-show.js)
   end
 end

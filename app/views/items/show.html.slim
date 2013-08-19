@@ -21,11 +21,4 @@
 
 - content_for :scripts do
   javascript:
-    $(document).ready(function(){
-      $('.thumbnails a').on('click', function(e){
-        e.preventDefault();
-        $('#largeimage img').replaceWith($(this).find('img').clone());
-        $('#largeimage').zoom({url: $('#largeimage').attr('src')});
-      });
-      $('#largeimage').zoom({url: $('#largeimage').attr('src')});
-    });
+    $(document).ready(function(){ bootstrapCollectionItemShow() });

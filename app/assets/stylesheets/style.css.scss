@@ -40,6 +40,7 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
 // Item page custom styles
 .collection-item hr.dashed {border-style:dashed;}
 .collection-item .thumbnail {border-radius:0;}
-.collection-item #largeimage {border:1px solid;color:#ddd;}
+.collection-item #largeimage {position:relative;border:1px solid;color:#ddd;}
 .collection-item #largeimage:after {position:absolute;top:0;right:0;display:block;height:33px;width:33px;content:'';background:image-url('icon-zoom.png');opacity:.5;}
 .collection-item #largeimage:hover:after {display:none;}
+.fancybox-skin {background:white;}
