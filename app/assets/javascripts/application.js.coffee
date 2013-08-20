@@ -11,5 +11,7 @@ window.bootstrapCollectionItemShow = ->
   $('.collection-item #largeimage').zoom({url: $('.collection-item #largeimage img').attr('src')})
   $('.collection-item .thumbnails a').on 'click', (e) ->
     e.preventDefault()
-    $('.collection-item #largeimage img').replaceWith($(this).find('img').clone())
-    $('.collection-item #largeimage').zoom({url: $('.collection-item #largeimage img').attr('src')})
+    url = $(this).find('img').data('zoom-url')
+    img = $('<img />').attr({src: url})
+    $('.collection-item #largeimage img').replaceWith(img)
+    $('.collection-item #largeimage').zoom({url: url})

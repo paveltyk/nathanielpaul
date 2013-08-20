@@ -38,9 +38,11 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
 .collection .swiper-slide.swiper-slide-active {opacity:1;}
 
 // Item page custom styles
-.collection-item hr.dashed {border-style:dashed;}
-.collection-item .thumbnail {border-radius:0;}
-.collection-item #largeimage {position:relative;border:1px solid;color:#ddd;}
-.collection-item #largeimage:after {position:absolute;top:0;right:0;display:block;height:33px;width:33px;content:'';background:image-url('icon-zoom.png');opacity:.5;}
+.collection-item {position:relative;}
+.collection-item .thumbnail {border:none;box-shadow:none;}
+.collection-item .thumbnail:hover {border:none;box-shadow:none;cursor:pointer;}
+.collection-item #largeimage {position:relative;min-height:570px;}
 .collection-item #largeimage:hover:after {display:none;}
+.collection-item .social-links {position:absolute;right:0;bottom:0;}
+.collection-item .social-links a {color:#858585;}
 .fancybox-skin {background:white;}
