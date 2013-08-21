@@ -49,7 +49,7 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
 .collection-item .social-links a {color:#858585;}
 
 .fancybox-wrap .collection-item {width:460px;}
-.fancybox-wrap .collection-item .social-links {right:-80px;bottom:30px;}
+.fancybox-wrap .collection-item .social-links {position:fixed;right:auto;left:50%;margin-left:160px;bottom:80px;}
 .fancybox-wrap .collection-item .social-links a {color:#ccc;text-shadow:none;}
 .fancybox-wrap .collection-item .thumbnails-container {position:absolute;left:-80px;top:0;}
 .fancybox-wrap .collection-item .thumbnails-container .thumbnail {opacity:.6;}
