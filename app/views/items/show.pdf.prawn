@@ -1,3 +1,3 @@
 @item.photos.each do |photo|
-  pdf.image "#{Rails.root}/public"+photo.image_url, :width => 450
+  pdf.image StringIO.new(photo.image.versions[:medium].read)
 end
