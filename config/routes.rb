@@ -22,6 +22,6 @@ Nathan::Application.routes.draw do
   end
 
   resource :collection, :only => [:show] do
-    resources :items, :only => [:show] 
+    resources :items, :only => [:show]
   end
 end
