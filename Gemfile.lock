@@ -259,6 +259,7 @@ DEPENDENCIES
   jquery-rails (~> 2.0.0)
   mysql2
   pg
+  prawn
   prawnto
   rails (= 3.2.13)
   rmagick

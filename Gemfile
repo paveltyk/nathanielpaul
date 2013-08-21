@@ -12,6 +12,7 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'fog'
 gem 'breadcrumbs_on_rails'
+gem 'prawn'
 gem 'prawnto'
 
 group :assets do
