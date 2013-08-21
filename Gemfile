@@ -39,7 +39,7 @@ group :test do
 end
 
 group :test, :development do
-  gem 'rspec-rails', git: 'git://github.com/rspec/rspec-rails.git'
+  gem 'rspec-rails'
   gem 'debugger'
   gem 'better_errors'
   gem 'mysql2'

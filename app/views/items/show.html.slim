@@ -5,7 +5,12 @@
     #largeimage= image_tag @item.active_photo.image_url(:big)
   .span4
     .row
-      .span2
+      .span3= link_to 'Back to the collection'.html_safe, collection_path, :class => 'btn btn-large btn-block'
+      .span3= link_to 'Download as PDF', collection_item_path(@item, :format => "pdf"), :class => 'btn btn-large btn-block',target:'blank'
+      .span6
+        hr.dashed
+    .row
+      .span4
         ul.thumbnails
           - @item.photos.each do |photo|
             - next unless photo.image?
