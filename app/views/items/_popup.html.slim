@@ -1,19 +1,14 @@
-.container(style="width:700px;min-height:570px;")
-  .row.collection-item
-    .span5
+.container.collection-item
+  .row
+    .span6
       #largeimage= image_tag(@item.active_photo.image_url(:big))
-    .span4
-      .row
-        .span4
-          a.btn.btn-large.btn-block(href="#")Download as PDF
-        .span4
-          hr.dashed
-      .row
-        .span2
-          ul.thumbnails
-            - @item.photos.each do |photo|
-              li.span1
-                a.thumbnail= image_tag photo.image_url(:big)
-        .span2
-          a.btn.btn-small.btn-block.btn-primary(href="#")Share on Facebook
-          a.btn.btn-small.btn-block.btn-info(href="#")Share on Twitter
+    .row
+      .span2.thumbnails-container
+        ul.thumbnails
+          - @item.photos.each do |photo|
+            li.span2
+              a.thumbnail= image_tag photo.image_url(:tiny), data: {'zoom-url' => photo.image_url(:big)}
+      .span2.social-links
+        = link_to 'Download as PDF', collection_item_path(@item, format: 'pdf'), class: 'btn btn-link btn-mini', target: '_blank'
+        = link_to 'Share on Facebook', '#', class: 'btn btn-link btn-mini'
+        = link_to 'Share on Twitter', '#', class: 'btn btn-link btn-mini'

@@ -2,8 +2,16 @@ swiperClickHandler = (swiper) ->
   if swiper.activeIndex != swiper.clickedSlideIndex
     swiper.swipeTo(swiper.clickedSlideIndex)
   else
-    url = $(swiper.activeSlide()).find('a').attr('href')
-    $.fancybox({href: url, type: 'ajax', afterShow: -> bootstrapCollectionItemShow()})
+    slide = $(swiper.activeSlide())
+    url = slide.find('a').attr('href')
+    $.fancybox
+      href: url
+      padding: 0
+      type: 'ajax'
+      scrolling: 'visible'
+      afterShow: -> bootstrapCollectionItemShow()
+      beforeShow: -> slide.addClass('opened')
+      beforeClose: -> slide.removeClass('opened')
 
 $ ->
   swiper = new Swiper('.swiper-container', {
