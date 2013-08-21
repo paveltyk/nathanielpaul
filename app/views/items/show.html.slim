@@ -6,7 +6,7 @@
   .span6
     .row
       .span3= link_to 'Back to the collection'.html_safe, collection_path, :class => 'btn btn-large btn-block'
-      .span3= link_to 'Download as PDF', '#', :class => 'btn btn-large btn-block'
+      .span3= link_to 'Download as PDF', collection_item_path(@item, :format => "pdf"), :class => 'btn btn-large btn-block',target:'blank'
       .span6
         hr.dashed
     .row
