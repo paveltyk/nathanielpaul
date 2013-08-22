@@ -11,8 +11,8 @@
                   = link_to collection_item_path(item)
                     = image_tag item.active_photo.image_url(:medium)
     - else
-      .span8.offset2
-        | Sorry, but currently there are no collections
+      .row.span4.offset4
+        p.well.text-center Sorry, but currently there are no collections
 
 - content_for :scripts do
   = javascript_include_tag 'collection-show'
