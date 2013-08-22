@@ -32,11 +32,14 @@ module ApplicationHelper
     link_to_popup 'Share on Pinterest', url, {popup_width: 750, popup_height: 344}.merge(options)
   end
 
-  def link_to_share_on_twitter(options={})
+  def link_to_share_on_twitter(collection_item, options={})
+    url_options = {
+        source: 'webclient',
+        text: "Currently reading #{collection_item_url(collection_item)}"
+    }
+    url = "//twitter.com/intent/tweet?#{url_options.to_query}"
 
-    url = "//twitter.com/intent/tweet?source=webclient&text=Currently+reading+#{request.original_url}"
-
-    link_to_popup 'Share on Twitter', url, {popup_width: 750, popup_height: 344}.merge(options)
+    link_to_popup 'Share on Twitter', url, {popup_width: 730, popup_height: 458}.merge(options)
   end
 
   def link_to_popup(text, url, options={})
