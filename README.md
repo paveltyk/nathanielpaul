@@ -21,3 +21,7 @@ Project setup
 - **Admin password is set through environment variable**
 
   example: ENV['ADMIN_CREDENTIALS'] = 'login:password'
+
+- **Enable user-env-compile lab feature on heroku for newly created instance**
+
+  example: heroku labs:enable user-env-compile

@@ -1,3 +1,5 @@
+require Rails.root.join('config', 'initializers', 'app_config.rb') unless defined?(APP_CONFIG)
+
 Nathan::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -43,7 +45,7 @@ Nathan::Application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = "//#{APP_CONFIG[:aws_s3_bucket]}.s3.amazonaws.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
