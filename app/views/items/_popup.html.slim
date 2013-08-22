@@ -11,5 +11,5 @@
       .span2.social-links
         = link_to 'Download as PDF', collection_item_path(@item, format: 'pdf'), class: 'btn btn-link btn-mini', target: '_blank'
         = link_to 'Share on Facebook', '#', class: 'btn btn-link btn-mini'
-        = link_to 'Share on Twitter', "https://twitter.com/intent/tweet?source=webclient&text=Currently+reading+#{request.original_url}", class: 'btn btn-link btn-mini'
+        = link_to_share_on_twitter(class: 'btn btn-link btn-mini')
         = link_to_share_on_pinterest(@item, class: 'btn btn-link btn-mini')
