@@ -25,7 +25,7 @@ group :assets do
   gem 'bootstrap-sass', '~> 2.3.2.0'
 end
 
-group :production do
+group [:production, :staging] do
   gem 'pg'
 end
 
