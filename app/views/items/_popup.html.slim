@@ -10,6 +10,6 @@
               a.thumbnail= image_tag photo.image_url(:tiny), data: {'zoom-url' => photo.image_url(:big)}
       .span2.social-links
         = link_to 'Download as PDF', collection_item_path(@item, format: 'pdf'), class: 'btn btn-link btn-mini', target: '_blank'
-        = link_to 'Share on Facebook', '#', class: 'btn btn-link btn-mini'
+        = link_to_share_on_facebook(@item, class: 'btn btn-link btn-mini')
         = link_to_share_on_twitter(@item, class: 'btn btn-link btn-mini')
         = link_to_share_on_pinterest(@item, class: 'btn btn-link btn-mini')

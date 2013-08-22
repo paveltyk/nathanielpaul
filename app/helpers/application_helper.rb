@@ -32,6 +32,15 @@ module ApplicationHelper
     link_to_popup 'Share on Pinterest', url, {popup_width: 750, popup_height: 344}.merge(options)
   end
 
+  def link_to_share_on_facebook(collection_item, options={})
+    url_options = {
+        u: collection_item_url(collection_item),
+    }
+    url = "//facebook.com/sharer/sharer.php?#{url_options.to_query}"
+
+    link_to_popup 'Share on Facebook', url, {popup_width: 750, popup_height: 344}.merge(options)
+  end
+
   def link_to_share_on_twitter(collection_item, options={})
     url_options = {
         source: 'webclient',
