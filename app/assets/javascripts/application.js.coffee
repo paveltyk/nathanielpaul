@@ -6,6 +6,7 @@
 #= require idangerous.swiper.3dflow-2.0
 #= require jquery.zoom
 #= require jquery.fancybox
+#= require window-popup
 
 window.applyZoom = (el) ->
   $(el).parent().zoom
