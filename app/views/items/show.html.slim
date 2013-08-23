@@ -21,3 +21,5 @@
 - content_for :scripts do
   javascript:
     $(document).ready(function(){ bootstrapCollectionItemShow() });
+
+- content_for(:description) { "Nathniel Paul collection #{@item.collection}" }
