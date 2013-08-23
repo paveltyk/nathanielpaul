@@ -38,7 +38,7 @@ module ApplicationHelper
     }
     url = "//facebook.com/sharer/sharer.php?#{url_options.to_query}"
 
-    link_to_popup 'Share on Facebook', url, {popup_width: 600, popup_height: 330}.merge(options)
+    link_to_popup 'Share on Facebook', url, {popup_width: 600, popup_height: 315}.merge(options)
   end
 
   def link_to_share_on_twitter(collection_item, options={})
