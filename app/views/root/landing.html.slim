@@ -7,7 +7,7 @@
   | Loading...
 .flexslider
   ul.slides
-    - %w(landing_1.jpg landing_2.jpg).each do |image_name|
+    - landing_images_list.each do |image_name|
       li style='background-image:url(#{asset_path(image_name)});'
 
 .bottom-nav-bg

@@ -3,6 +3,10 @@ module ApplicationHelper
     @landing_style = true
   end
 
+  def landing_images_list
+    (1..11).collect {|n| "landing-#{n}.jpg"}
+  end
+
   def landing_style?
     !!@landing_style
   end
