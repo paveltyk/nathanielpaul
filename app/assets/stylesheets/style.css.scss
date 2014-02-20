@@ -59,3 +59,16 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
 .fancybox-wrap .collection-item .thumbnails-container .thumbnail img {background-color:white;}
 .fancybox-opened .fancybox-skin {-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
 .fancybox-close {top:-16px;right:-16px;height:16px;width:16px;background:image-url('icon-close.png') no-repeat;}
+
+.ie6 .page-content, .ie7 .page-content, .ie8 .page-content, .ie9 .page-content {
+  height: 90%;
+}
+.ie6 .collection .collection-wrap, .ie7 .collection .collection-wrap, .ie8 .collection .collection-wrap, .ie9 .collection .collection-wrap {
+  margin-top: 10%;
+}
+
+// Fix for latest IE versions which doesn't support IFs
+@media screen and (min-width:0\0) {
+  .page-content {height: 90%;}
+  .collection .collection-wrap {margin-top: 10%;}
+}

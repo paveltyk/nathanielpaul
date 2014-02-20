@@ -1,9 +1,10 @@
 doctype html
-/![if lt IE 7 ]> <html lang="#{::I18n.locale}" class="no-js ie6"> <![endif]
-/![if IE 7 ]>    <html lang="#{::I18n.locale}" class="no-js ie7"> <![endif]
-/![if IE 8 ]>    <html lang="#{::I18n.locale}" class="no-js ie8"> <![endif]
-/![if IE 9 ]>    <html lang="#{::I18n.locale}" class="no-js ie9"> <![endif]
-/! [if (gt IE 9)|!(IE)]><!
+/![if lt IE 7]> <html lang="#{::I18n.locale}" class="no-js ie6"> <![endif]
+/![if IE 7]>    <html lang="#{::I18n.locale}" class="no-js ie7"> <![endif]
+/![if IE 8]>    <html lang="#{::I18n.locale}" class="no-js ie8"> <![endif]
+/![if IE 9]>    <html lang="#{::I18n.locale}" class="no-js ie9"> <![endif]
+
+/! [if (gt IE 9)|!(IE)]>
 html.no-js lang="#{::I18n.locale}"
   /! <![endif]
   head
@@ -17,6 +18,7 @@ html.no-js lang="#{::I18n.locale}"
     meta name="keywords" content="#{content_for?(:keywords) ? yield(:keywords) : 'Nathaniel Paul, designer, emerged'}"
 
     = stylesheet_link_tag 'application', :media => 'all'
+
     = javascript_include_tag 'modernizr-min'
     = csrf_meta_tags
 
