@@ -19,7 +19,7 @@ $ ->
     calculateHeight: true,
     keyboardControl: true,
     centeredSlides: true,
-    initialSlide: 2,
+    initialSlide: 1,
     preventLinks: true,
     tdFlow: {
       rotate: -10,
