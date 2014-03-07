@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def landing_images_list
-    (1..11).collect {|n| "landing-#{n}.jpg"}
+    ['landing-new.png']
   end
 
   def landing_style?
