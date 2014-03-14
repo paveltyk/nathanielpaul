@@ -33,7 +33,7 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
 
 // Collection page slider custom styles
 .collection {position:relative;overflow:visible;}
-.collection .collection-wrap {position:absolute;left:0;right:0;height:525px;margin-top:-262px;background:red;top:0;background:red;height:100%;}
+.collection .collection-wrap {position:absolute;left:0;right:0;height:525px;margin-top:-262px;}
 .collection .swiper-container {width:100%;}
 .collection .swiper-slide {width:350px;height:525px;opacity:.75;}
 .collection .swiper-slide.swiper-slide-active {opacity:1;}
@@ -43,13 +43,14 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
 .collection-item {position:relative;}
 .collection-item .thumbnail {border:none;box-shadow:none;padding:0;}
 .collection-item .thumbnail:hover {border:none;box-shadow:none;cursor:pointer;}
-.collection-item #largeimage {position:relative;min-height:570px;}
+.collection-item #largeimage {position:relative;min-height:570px;text-align:center;}
 .collection-item #largeimage:hover:after {display:none;}
 .collection-item #largeimage img.zoomed {visibility:hidden;}
 .collection-item .social-links {position:absolute;right:0;bottom:0;}
 .collection-item .social-links a {color:#858585;}
 
 .fancybox-wrap .collection-item {width:460px;}
+.fancybox-wrap .collection-item #largeimage {min-height:auto;}
 .fancybox-wrap .collection-item .social-links {position:fixed;right:auto;left:50%;margin-left:160px;bottom:80px;}
 .fancybox-wrap .collection-item .social-links a {color:#ccc;text-shadow:none;}
 .fancybox-wrap .collection-item .thumbnails-container {position:absolute;left:-80px;top:0;}
@@ -74,6 +75,16 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
   .collection .collection-wrap {margin-top:10%;}
 }
 @media (max-width: 767px) {
+  .page-content {border-width:5px;}
   .bottom-nav:before {display:none;}
   .bottom-nav ul li {display:inline-block;padding:0 3px 2px;font-size:75%;}
+  .collection-item .thumbnail {display:none;}
+}
+@media (max-width: 440px) {
+  .fancybox-wrap .collection-item {width:300px;}
+}
+
+@media (max-height: 600px) {
+  .collection .swiper-slide {width:175px;height:263px;}
+  .collection .collection-wrap {height:263px;margin-top:-132px;}
 }

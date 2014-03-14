@@ -8,7 +8,7 @@ swiperClickHandler = (swiper) ->
       href: url
       padding: 0
       type: 'ajax'
-      scrolling: 'visible'
+      scrolling: 'no'
       afterShow: -> bootstrapCollectionItemShow()
       beforeShow: -> slide.addClass('opened')
       beforeClose: -> slide.removeClass('opened')

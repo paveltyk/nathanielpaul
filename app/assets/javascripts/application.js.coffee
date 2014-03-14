@@ -20,6 +20,9 @@ window.applyZoom = (el) ->
       false
 
 window.bootstrapCollectionItemShow = ->
+  if $('.page-content').height() < $('.collection-item #largeimage img.orig').height()
+    $('.collection-item #largeimage img.orig').css('height', $('.page-content').height() + 'px')
+
   applyZoom $('.collection-item #largeimage img')
 
   $('.collection-item .thumbnails a').on 'click', (e) ->

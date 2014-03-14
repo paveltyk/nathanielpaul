@@ -1,7 +1,7 @@
 .container.collection-item
   .row
     .span6
-      #largeimage= image_tag(@item.active_photo.image_url(:big))
+      #largeimage= image_tag(@item.active_photo.image_url(:big), class: 'orig')
     .row
       .span2.thumbnails-container
         ul.thumbnails
