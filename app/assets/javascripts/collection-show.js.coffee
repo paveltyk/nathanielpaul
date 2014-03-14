@@ -22,10 +22,10 @@ $ ->
     initialSlide: 1,
     preventLinks: true,
     tdFlow: {
-      rotate: -10,
-      stretch: -30,
-      depth: 200,
-      modifier: 1,
+      rotate: 0,
+      stretch: 0,
+      depth: 0,
+      modifier: 0,
       shadows: false,
     },
     onSlideClick: swiperClickHandler

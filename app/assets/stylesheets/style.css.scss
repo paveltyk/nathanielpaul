@@ -36,7 +36,9 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
 .collection .collection-wrap {position:absolute;left:0;right:0;height:525px;margin-top:-262px;}
 .collection .swiper-container {width:100%;}
 .collection .swiper-slide {width:350px;height:525px;opacity:.75;}
+.collection .swiper-slide img {-webkit-transform:scale(0.7);-ms-transform:scale(0.7);-moz-transform:scale(0.7);-o-transform:scale(0.7);transform:scale(0.7);-webkit-transition:width .5s,height .5s,-webkit-transform .5s;transition:width .5s,height .5s,transform .5s;}
 .collection .swiper-slide.swiper-slide-active {opacity:1;}
+.collection .swiper-slide.swiper-slide-active img {-webkit-transform:scale(1);-ms-transform:scale(1);-moz-transform:scale(1);-o-transform:scale(1);transform:scale(1);}
 .collection .swiper-slide.opened a img {visibility:hidden;}
 
 // Item page custom styles
