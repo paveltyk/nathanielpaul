@@ -1,0 +1,9 @@
+.row
+  .span12= breadcrumbs_menu do
+     - add_breadcrumb 'Collection Item', admin_collection_item_path(@collection, @item)
+     - add_breadcrumb 'Add Photos'
+  .span12
+    h1 Add photos to collection item
+    hr
+  .span6
+    = render 'form', :path => admin_collection_item_path(@collection, @item)

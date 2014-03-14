@@ -1,0 +1,8 @@
+.row
+  .span12= breadcrumbs_menu do
+    - add_breadcrumb 'New Item'
+  .span12
+    h1 New item in collection "#{@collection}"
+    hr
+  .span6
+    = render 'form', :path => admin_collection_items_path

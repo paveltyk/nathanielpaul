@@ -1,0 +1,13 @@
+.row
+  .span12= breadcrumbs_menu do
+    - add_breadcrumb @collection, admin_collection_path(@collection)
+  .span12
+    h1
+      | Collection "#{@collection}"
+      = link_to 'New item', new_admin_collection_item_path(@collection), class: 'btn btn-primary btn-large pull-right'
+    hr
+    ul.thumbnails
+      - @collection.items.each do |item|
+        li.span2
+          = link_to  admin_collection_item_path(@collection, item), :class => :thumbnail
+            = image_tag item.active_photo.image_url(:tiny)
