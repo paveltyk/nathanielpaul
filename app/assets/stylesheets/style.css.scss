@@ -91,3 +91,8 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
   .collection .collection-wrap {height:263px;margin-top:-132px;}
   .fancybox-wrap .collection-item .social-links {display:none;}
 }
+
+// FF vertical centering fix
+@-moz-document url-prefix() {
+  .container-fluid {min-height:0;}
+}
