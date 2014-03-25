@@ -8,7 +8,7 @@ p {margin-bottom:3px;}
 .container-fluid {min-height:100%;}
 .page-content > .container-fluid:last-child {padding-bottom:30px;}
 
-.bottom-nav {position:absolute;left:0;bottom:0;width:100%;z-index:1000;}
+.bottom-nav {position:absolute;left:0;right:0;bottom:0;z-index:1000;}
 .bottom-nav ul {margin:0 20px;padding:0 0 10px;border-top:1px solid #f1f1f1;font-size:12px;line-height:12px;}
 .bottom-nav ul li {display:inline-block;padding:0 10px 3px;}
 .bottom-nav ul li:first-child {margin-left:0;}
@@ -95,4 +95,6 @@ ul.slides li {display:block;position:absolute;bottom:0;top:0;left:0;right:0;marg
 // FF vertical centering fix
 @-moz-document url-prefix() {
   .container-fluid {min-height:0;}
+  .bottom-nav {left:20px;right:20px;bottom:20px;}
+  .landing .bottom-nav {left:0;right:0;bottom:0;}
 }
